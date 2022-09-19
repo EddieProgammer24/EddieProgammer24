@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Student Details</title>
+    <style type="text/css">
+        @import url('https: //fonts.googleapis.com/css?family=Poppins: 400,')
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    background: #f2f2f2;
+}
+nav{
+    background:#1b1b1b ;
+}
+nav:after{
+    content: '';
+    clear: both;
+    display: table;
+}
+nav .logo{
+    float: left;
+    color: white;
+    font-size: 27px;
+    font-weight: 600;
+    line-height: 70px;
+    padding-left: 60px;
+}
+nav ul{
+    float: right;
+    list-style: none;
+    margin-right: 40px;
+    position: relative;
+}
+nav ul li{
+    float: left;
+    display: inline-block;
+    background: #1b1b1b;
+    margin: 0 5px;
+}
+nav ul li a{
+    color:white ;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 18px;
+    padding: 8px 15px;
+}
+nav ul li a:hover{
+    color: cyan;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #33ffff,
+                0 0 5px #66ffff;
+}
+nav ul ul li a:hover{
+    color: cyan;
+    box-shadow: none;
+}
+nav ul ul{
+    position: absolute;
+    top: 90px;
+    border-top: 3px solid cyan;
+    opacity: 0;
+    visibility: hidden;
+    transition: top.3s;
+}
+nav ul ul ul{
+    border-top: none;
+}
+nav ul li:hover > ul{
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+nav ul ul li{
+    position: relative;
+    margin: 0px;
+    width: 150px;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+nav ul ul li a{
+    line-height: 50px;
+}
+nav ul ul ul li{
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+span .fa-plus{
+    margin-left: 40px;
+    font-size: 15px;
+}
+        .content-table{
+            border-collapse: collapse;
+            margin: 25px 0;
+            font-size: 0.9em;
+            min-width: 400px;
+            border-radius: 5px 5px 0 0;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+        }
+        .content-table thead tr{
+            background-color: #009879;
+            color: #ffffff;
+            text-align: left;
+            font-weight: bold;
+        }
+        .content-table th,
+        .content-table td{
+            padding: 12px 15px;
+        }
+        .content-table tbody tr{
+            border-bottom: 1px solid #ddddddd ;
+        }
+        .content-table tbody tr:nth-of-type(even){
+            background-color: #f3f3f3;
+        }
+        .content-table tbody tr:last-of-type{
+            border-bottom: 2px solid #009879;
+        }
+        .content-table tbody tr.active-row{
+            font-weight: bold;
+            color:#009878 ;
+        }
+
+    </style>
+</head>
+<body>
+<nav>
+        <div class="logo">Admin</div>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li>
+                <a href = "#">View</a>
+                <ul>
+                    <li><a href="#">User Profiles</a></li>
+                    <li><a href="add_student_view.php">Students</a></li>
+                    <li><a href="#">Parents Details</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">Admission</a>
+                <ul>
+                    <li><a href="#">Student Details</a></li>
+                    <li><a href="#">Games & Clubs</a></li>
+                    <li>
+                        <a href="#">More
+                            <span class="fa fa-plus"></span></a>
+                        <ul>
+                            <li><a href="#">Academics</a></li>
+                            <li><a href="#">High Schools</a></li>
+                            <li><a href="#">Institutions</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <li><a href="add_student_info.html">New Student</a></li>
+            <li><a href="#">Inbox</a></li>
+        </ul>
+    </nav>
+
+	<center>
+<form action="add_student_info.php" method="post" name="form1">
+<table width="25%" border="0" class="content-table">
+    <thead>Personal Information</thead>
+<tbody><tr> 
+ <td>Name</td>
+ <td><input type="text" name="surname" placeholder="Surname"></td>
+ <tr><td>FirstName</td>
+ <td><input type="text" name="firstname" placeholder="FirstName"></td></tr>
+ <tr><td>Initial</td>
+ <td><input type="text" name="initial" placeholder="Initial/Other"></td></tr>
+ <tr><td>ID Number</td>
+ <td><input type="text" name="national_number" placeholder="National Number"></td></tr>
+ <tr><td>County</td>
+ <td><input type="text" name="county" placeholder="County"></td></tr>
+ <tr><td>Registration</td>
+ <td><input type="text" name="reg_num" placeholder="Registration Number"></td></tr>
+ <tr><td>Year Of Study</td>
+ <td><input type="text" name="year_study" placeholder="Year of Study"></td></tr>
+ <tr><td>Religion</td>
+ <td><input type="text" name="religion"	placeholder="Religion"></td></tr>
+ <tr><td>Others</td>
+ 	<td><input type="text" name="religion_others" placeholder="Others"></td></tr>
+ 	<tr><td>Nationality</td>
+ 	<td><input type="text" name="nationality" placeholder="Nationality"></td></tr>
+ 	<tr><td>Others</td>
+ 	<td><input type="text" name="nationality_others" placeholder="Others"></td></tr>
+ 	<tr><td>Address</td>
+ 	<td><input type="text" name="student_address" placeholder="Address"></td></tr>
+ 	<tr><td>Town/City</td>
+ 	<td><input type="text" name="student_town" placeholder="Town/City"></td></tr>
+ 	<tr><td>Telephone</td>
+ 	<td><input type="text" name="student_tel" placeholder="Telephone Landline"></td></tr>
+ 	<tr><td>Phone Number</td>
+ 	<td><input type="text" name="student_mobile" placeholder="Mobile Phone"></td></tr>
+ 	<tr><td>Email Address</td>
+ 	<td><input type="text" name="student_email" placeholder="Email Address"></td></tr>
+</tr>
+
+<tr> 
+<td></td>
+<td><input type="submit" name="Submit" value="Add"></td>
+</tr>
+</tbody></table>
+</form></center>
+</body>
+</html>
